@@ -62,7 +62,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Extract version from release tag
-        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
       - name: Pack NuGet package
         run: dotnet pack --configuration Release --no-build --output nupkgs /p:Version=${{ env.VERSION }}
