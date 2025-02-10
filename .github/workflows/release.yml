@@ -7,7 +7,13 @@ on:
   pull_request:
     branches:
       - main
+  release:
+    types: [published]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   build-and-test:
@@ -34,7 +40,11 @@ jobs:
   publish-nuget:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'release' && github.event.action == 'published'
+
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout repository
@@ -51,8 +61,11 @@ jobs:
       - name: Build project
         run: dotnet build --configuration Release --no-restore
 
+      - name: Extract version from release tag
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
       - name: Pack NuGet package
-        run: dotnet pack --configuration Release --no-build --output nupkgs
+        run: dotnet pack --configuration Release --no-build --output nupkgs /p:Version=${{ env.VERSION }}
 
       - name: Publish to NuGet
         run: dotnet nuget push nupkgs/*.nupkg --api-key ${{ secrets.API_KEY_NUGET }} --source https://api.nuget.org/v3/index.json --skip-duplicate
