@@ -31,6 +31,4 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
-  <Import Project="..\TioneCQRS.TestsShered\TioneCQRS.TestsShered.projitems" Label="Shared" />
-
 </Project>

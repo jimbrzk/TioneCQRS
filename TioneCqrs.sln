@@ -12,10 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TioneCQRS.TestsLegacy", "TioneCQRS.TestsLegacy\TioneCQRS.TestsLegacy.csproj", "{8845FF28-574D-4FCB-9C7A-F215DD66E459}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TioneCQRS.TestsShered", "TioneCQRS.TestsShered\TioneCQRS.TestsShered.shproj", "{F6D870FF-902D-4AFD-B614-5105B1E0D2A5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,20 +26,11 @@ Global
 		{92A43F00-CBBA-4815-A04B-AD171C07E1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92A43F00-CBBA-4815-A04B-AD171C07E1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92A43F00-CBBA-4815-A04B-AD171C07E1B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8845FF28-574D-4FCB-9C7A-F215DD66E459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8845FF28-574D-4FCB-9C7A-F215DD66E459}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8845FF28-574D-4FCB-9C7A-F215DD66E459}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8845FF28-574D-4FCB-9C7A-F215DD66E459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD936DAD-79CA-4DED-ADE7-B661371CE211}
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		TioneCQRS.TestsShered\TioneCQRS.TestsShered.projitems*{8845ff28-574d-4fcb-9c7a-f215dd66e459}*SharedItemsImports = 4
-		TioneCQRS.TestsShered\TioneCQRS.TestsShered.projitems*{92a43f00-cbba-4815-a04b-ad171c07e1b5}*SharedItemsImports = 5
-		TioneCQRS.TestsShered\TioneCQRS.TestsShered.projitems*{f6d870ff-902d-4afd-b614-5105b1e0d2a5}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
