@@ -18,7 +18,7 @@
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0' OR '$(TargetFramework)' == 'net8.0'">
     <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
