@@ -1,6 +1,10 @@
-﻿namespace TioneCqrs.Queries;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
-public interface IQueryHandler<TQuery, TResult> where TQuery : IQuery
+namespace TioneCqrs.Queries
 {
-    Task<TResult> ExecuteAsync(TQuery query, CancellationToken cancellationToken = default);
+    public interface IQueryHandler<TQuery, TResult> where TQuery : IQuery
+    {
+        Task<TResult> ExecuteAsync(TQuery query, CancellationToken cancellationToken = default);
+    }
 }

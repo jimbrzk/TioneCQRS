@@ -1,9 +1,18 @@
-﻿namespace TioneCqrs.Exceptions;
+﻿using System;
 
-/// <summary>
-/// Invalid command was called. It can be invalid TioneCQRS command type or it's not registred in Dependency Injection services collection
-/// </summary>
-public class InvalidCommandException(Type commandType) : Exception("Invalid command was called. It can be invalid TioneCQRS command type or it's not registred in Dependency Injection services collection")
+namespace TioneCqrs.Exceptions
 {
-    public Type CommandType { get; } = commandType;
+
+    /// <summary>
+    /// Invalid command was called. It can be invalid TioneCQRS command type or it's not registred in Dependency Injection services collection
+    /// </summary>
+    public class InvalidCommandException : Exception
+    {
+        public InvalidCommandException(Type commandType) : base("Invalid command was called. It can be invalid TioneCQRS command type or it's not registred in Dependency Injection services collection")
+        {
+            CommandType = commandType;
+        }
+
+        public readonly Type CommandType;
+    }
 }

@@ -1,5 +1,6 @@
-﻿namespace TioneCqrs.Queries;
-
-public interface IQuery
+﻿namespace TioneCqrs.Queries
 {
+    public interface IQuery
+    {
+    }
 }

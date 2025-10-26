@@ -1,6 +1,6 @@
 # TioneCQRS
 
-TioneCQRS is a lightweight .NET 9 library that provides an easy-to-use implementation of the **Command Query Responsibility Segregation (CQRS) pattern**. It simplifies handling commands and queries by utilizing dependency injection and an intuitive API for dispatching commands and queries.
+TioneCQRS is a lightweight multi .NET framework library that provides an easy-to-use implementation of the **Command Query Responsibility Segregation (CQRS) pattern**. It simplifies handling commands and queries by utilizing dependency injection and an intuitive API for dispatching commands and queries.
 
 ## Features
 
@@ -33,6 +33,26 @@ services.RegisterQueries(Assembly.GetExecutingAssembly());
 // Register commands and queries from the calling assembly (if needed)
 services.RegisterCommands(Assembly.GetCallingAssembly());
 services.RegisterQueries(Assembly.GetCallingAssembly());
+
+var serviceProvider = services.BuildServiceProvider();
+```
+
+By defualt services (dispatchers, commands and queries) are registreted at `Scoped` service lifetime.
+If you want to change that, call register methods with additional configuration parameters as showen bellow:
+
+```csharp
+var services = new ServiceCollection();
+
+var assembly = Assembly.GetExecutingAssembly();
+
+services.RegisterCommands(assembly, config =>
+{
+    config.WithCommandsLifetime(dispatcher: ServiceLifetime.Singleton, commands: ServiceLifetime.Transient);
+});
+services.RegisterQueries(assembly, config =>
+{
+    config.WithQueriesLifetime(dispatcher: ServiceLifetime.Singleton, queries: ServiceLifetime.Transient);
+});
 
 var serviceProvider = services.BuildServiceProvider();
 ```
