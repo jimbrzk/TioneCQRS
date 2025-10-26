@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f6d870ff-902d-4afd-b614-5105b1e0d2a5</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TioneCQRS.TestsShered</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Commands\TestComandWithoutResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Commands\TestComandWithResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Commands\TestCommandWithoutResultHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Commands\TestCommandWithResultHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Queries\TestQuery.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cqrs\Queries\TestQueryHandler.cs" />
+  </ItemGroup>
+</Project>
